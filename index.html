@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Web Teknolojileri Projesi</title>
+
+    <style>
+   input:user-invalid, textarea:user-invalid {
+    border: 2px solid red;
+  }
+</style>
 </head>
 <body>
  
@@ -18,7 +24,70 @@
   </nav>
 
   <main>
-  </main>
+    <section>
+  <h2>Masa Rezervasyonu ve İletişim</h2>
+  <!-- Formun action ve method nitelikleri (Kayıt/Rezervasyon işlemi olduğu için method="post" kullanıldı) -->
+  <form action="/rezervasyon" method="post">
+    
+    <!-- 1. Denetim Tipi: text -->
+    <div>
+      <label for="adsoyad">Adiniz Soyadiniz (zorunlu):</label>
+      <input type="text" id="adsoyad" name="adsoyad" required autocomplete="name">
+    </div>
+
+    <!-- 2. Denetim Tipi: email -->
+    <div>
+      <label for="eposta">E-posta Adresiniz (zorunlu):</label>
+      <input type="email" id="eposta" name="eposta" required autocomplete="email">
+    </div>
+
+    <!-- 3. Denetim Tipi: tel -->
+    <div>
+      <label for="telefon">Telefon Numarasi:</label>
+      <input type="tel" id="telefon" name="telefon" autocomplete="tel">
+    </div>
+
+    <!-- 4. Denetim Tipi: date -->
+    <div>
+      <label for="tarih">Rezervasyon Tarihi:</label>
+      <input type="date" id="tarih" name="tarih">
+    </div>
+
+    <!-- 5. Denetim Tipi: select (Açılır Liste) -->
+    <div>
+      <label for="kisi">Kişi Sayisi:</label>
+      <select id="kisi" name="kisi">
+        <option value="">Seçiniz...</option>
+        <option value="1">1 Kişi</option>
+        <option value="2">2 Kişi</option>
+        <option value="3">3+ Kişi</option>
+      </select>
+    </div>
+
+    <!-- 6. Denetim Tipi: textarea (Çok satırlı metin) -->
+    <div>
+      <label for="notlar">Özel İstekleriniz (en az 10 karakter):</label>
+      <textarea id="notlar" name="notlar" rows="4" minlength="10"></textarea>
+    </div>
+
+    <!-- Gönderme Düğmesi -->
+    <button type="submit">Rezervasyon Yap</button>
+  </form>
+</section>
+<section>
+    <h2>Günün Öne Çikan Lezzeti</h2>
+    <img 
+      src="https://picsum.photos/id/1060/800/500" 
+      srcset="https://picsum.photos/id/1060/400/250 400w,
+              https://picsum.photos/id/1060/800/500 800w"
+      sizes="(max-width: 600px) 100vw, 800px"
+      width="800"
+      height="500"
+      loading="lazy"
+      alt="Özel Kahve Sunumu">
+  </section>
+ 
+</main>
 
   <footer>
   </footer>
